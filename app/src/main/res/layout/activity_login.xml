@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/fab_margin"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pcadapp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="@android:dimen/thumbnail_height"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/image"
+        android:src="@drawable/app1" />
+
+    <EditText
+        android:id="@+id/IpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:hint="@string/indirizzo_ip_server"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:id="@+id/IpButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertIp"
+        android:text="@string/inserisci"
+        />
+
+    <EditText
+        android:id="@+id/loginText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/location"
+        android:inputType="textPersonName"
+         />
+
+    <EditText
+        android:id="@+id/loginText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/inserisci_testo_da_cercare"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/researchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doResearch"
+        android:text="@string/ok"
+         />
+
+    <Button
+        android:id="@+id/printButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doPrint"
+        android:text="@string/cerca_parole_parole_frequenti"
+        android:textAlignment="center"
+
+         />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:text="@string/stampa_testo" />
+
+</LinearLayout>
