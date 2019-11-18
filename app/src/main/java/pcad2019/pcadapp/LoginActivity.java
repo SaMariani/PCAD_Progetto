@@ -62,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
         worker.execute();
     }
 
-    private void printTextView(String s){
+    /*private void printTextView(String s){
         TextView idText = (TextView) findViewById(R.id.textView4);
         //idText.setText(worker.getWords());
         idText.setText(s);
-    }
+    }*/
 
     public void doPrint(View view) { // avvia activity per la stampa 3 words
         if (!checkIp()) return;
@@ -75,10 +75,10 @@ public class LoginActivity extends AppCompatActivity {
         //startActivity(intent);
         AndroidClient client = new AndroidClient(IPstring , 5005);
         ConnectionWorker worker = new ConnectionWorker(this,client,"print", null,null, null);
-        TextView idText = (TextView) findViewById(R.id.textView4);
+        //TextView idText = (TextView) findViewById(R.id.textView4);
         worker.execute();
-        Intent intent = getIntent();
-        String s = intent.getStringExtra("msg1");
+        //Intent intent = getIntent();
+        //String s = intent.getStringExtra("msg1");
         //wordsToPrint=s;
         //worker.onProgressUpdate();
         /*try {
@@ -89,6 +89,10 @@ public class LoginActivity extends AppCompatActivity {
         //idText.setText(worker.getWords());
         //idText.setText(wordsToPrint);
         //printTextView(wordsToPrint+"{"+s+"}");
+    }
+
+    public void do3(View view) { // avvia activity per la ricerca 3 parole piu frequenti in una location
+
     }
 
     public void doLogIn(View view) { // effettuta il login e se va a buon fine avvia la loginActivity

@@ -68,19 +68,23 @@
          />
 
     <Button
-        android:id="@+id/printButton"
+        android:id="@+id/search3wordsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="doPrint"
+        android:onClick="do3"
         android:text="@string/cerca_parole_parole_frequenti"
         android:textAlignment="center"
 
          />
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/stampaTuttoButton"
         android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:text="@string/stampa_testo" />
+        android:layout_height="wrap_content"
+        android:onClick="doPrint"
+        android:text="@string/stampaTutto"
+        android:textAlignment="center"
+
+        />
 
 </LinearLayout>

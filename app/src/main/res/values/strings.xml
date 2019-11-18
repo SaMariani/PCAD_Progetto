@@ -2,7 +2,7 @@
     <string name="app_name">PCAD APP 2019</string>
     <string name="location">LOCATION</string>
     <string name="ok">OK</string>
-    <string name="cerca_parole_parole_frequenti">CERCA LE PAROLE PIÚ FREQUENTI</string>
+    <string name="cerca_parole_parole_frequenti">CERCA LE  3 PAROLE PIÚ FREQUENTI</string>
     <string name="inserisci_testo_da_cercare">INSERISCI TESTO DA CERCARE</string>
     <string name="benvenuto">BENVENUTO</string>
     <string name="indirizzo_ip_server">IP SERVER</string>
@@ -22,5 +22,6 @@
     <string name="pcadapp">PCAD App</string>
     <string name="image">Logo</string>
     <string name="stampa_testo" />
-    <string name="output_text">re</string>
+    <string name="stampaTutto">STAMPA TUTTE LE PAROLE CERCATE</string>
+    <string name="output_text">" "</string>
 </resources>
