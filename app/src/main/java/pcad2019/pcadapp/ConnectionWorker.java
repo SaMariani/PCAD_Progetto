@@ -18,10 +18,6 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
     private String searchedW;
     private String words="INITIALIZED";
 
-    public String getWords() {
-        return words;
-    }
-
     public ConnectionWorker(Activity activity, AndroidClient client, String command, String location, String searchedW, String words) {
         this.activity = activity;
         this.client = client;
@@ -37,22 +33,27 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
         switch(command) {
             case "research":
                 return client.research(location, searchedW);
+
             case "print":
-                Intent intent = new Intent(activity, SigninActivity.class);
+                Intent intent = new Intent(activity, PrintAllActivity.class);
                 words = client.print();
                 intent.putExtra("msg2", words);
                 activity.startActivity(intent);
+                return !words.equals("FAIL");
+
+            case "print3words":
+                Intent intent2 = new Intent(activity, SigninActivity.class);
+                words = client.print();
+                intent2.putExtra("msg2", words);
+                activity.startActivity(intent2);
                 //words = "prova OK";
                 /*words = client.print();
                 LoginActivity.wordsToPrint=words;*/
                 return !words.equals("FAIL");
+
             default:
                 throw new AssertionError();
         }
-    }
-
-    protected void onProgressUpdate(Integer... progress) {
-        LoginActivity.setWords(words);
     }
 
     @Override
@@ -70,6 +71,14 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 break;
             }
             case "print": {
+                if (result) {
+                    Toast.makeText(activity, "Stampa effettuata: ", Toast.LENGTH_SHORT).show();
+                    //activity.finish();
+                }
+                else { Toast.makeText(activity, "Impossibile cercare", Toast.LENGTH_SHORT).show();}
+                break;
+            }
+            case "print3words": {
                 if (result) {
                     Toast.makeText(activity, "Stampa effettuata: "+words, Toast.LENGTH_SHORT).show();
                     //activity.finish();

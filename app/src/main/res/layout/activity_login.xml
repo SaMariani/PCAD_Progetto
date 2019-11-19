@@ -59,23 +59,42 @@
         android:hint="@string/inserisci_testo_da_cercare"
         android:inputType="textPersonName" />
 
+
+
     <Button
         android:id="@+id/researchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="doResearch"
-        android:text="@string/ok"
-         />
+        android:text="@string/ok" />
 
-    <Button
-        android:id="@+id/search3wordsButton"
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="do3"
-        android:text="@string/cerca_parole_parole_frequenti"
-        android:textAlignment="center"
+        android:layout_height="60dp">
 
-         />
+        <Button
+            android:id="@+id/search3wordsButton"
+            android:layout_width="191dp"
+            android:layout_height="match_parent"
+            android:onClick="do3wordsMoreFrequent"
+            android:text="@string/cerca_parole_parole_frequenti"
+            android:textAlignment="center"
+
+            />
+
+        <EditText
+
+            android:id="@+id/loginText3"
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/inserire_location_da_cercare"
+            android:inputType="textPersonName"
+            android:minWidth="88dip"
+            android:minHeight="48dip"
+            android:autofillHints="" />
+
+    </TableRow>
 
     <Button
         android:id="@+id/stampaTuttoButton"

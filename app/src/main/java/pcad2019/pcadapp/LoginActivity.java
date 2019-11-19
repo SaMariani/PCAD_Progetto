@@ -13,21 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.concurrent.TimeUnit;
-
 public class LoginActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE_ID = "msg1";
     public static final String EXTRA_MESSAGE_IP = "msg2";
-    private String IPstring ;
-
-    public static String wordsToPrint="INITIALVALUE";
-
-    public static void setWords(String words) {
-        wordsToPrint = words;
-    }
-
-
+    private String IPstring;
 
     private boolean checkIp(){ // controlla se è stato inserito un indirizzo ip
         if ( IPstring == null ){
@@ -62,37 +52,18 @@ public class LoginActivity extends AppCompatActivity {
         worker.execute();
     }
 
-    /*private void printTextView(String s){
-        TextView idText = (TextView) findViewById(R.id.textView4);
-        //idText.setText(worker.getWords());
-        idText.setText(s);
-    }*/
-
     public void doPrint(View view) { // avvia activity per la stampa 3 words
         if (!checkIp()) return;
-        //Intent intent = new Intent(this, SigninActivity.class);
-        //intent.putExtra("msg2", IPstring);
-        //startActivity(intent);
         AndroidClient client = new AndroidClient(IPstring , 5005);
         ConnectionWorker worker = new ConnectionWorker(this,client,"print", null,null, null);
-        //TextView idText = (TextView) findViewById(R.id.textView4);
         worker.execute();
-        //Intent intent = getIntent();
-        //String s = intent.getStringExtra("msg1");
-        //wordsToPrint=s;
-        //worker.onProgressUpdate();
-        /*try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        //idText.setText(worker.getWords());
-        //idText.setText(wordsToPrint);
-        //printTextView(wordsToPrint+"{"+s+"}");
     }
 
-    public void do3(View view) { // avvia activity per la ricerca 3 parole piu frequenti in una location
-
+    public void do3wordsMoreFrequent(View view) { // avvia activity per la ricerca 3 parole piu frequenti in una location
+        if (!checkIp()) return;
+        AndroidClient client = new AndroidClient(IPstring , 5005);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"print3words", null,null, null);
+        worker.execute();
     }
 
     public void doLogIn(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
