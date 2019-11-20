@@ -72,8 +72,7 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             }
             case "print": {
                 if (result) {
-                    Toast.makeText(activity, "Stampa effettuata: ", Toast.LENGTH_SHORT).show();
-                    //activity.finish();
+                    Toast.makeText(activity, "Stampa effettuata", Toast.LENGTH_SHORT).show();
                 }
                 else { Toast.makeText(activity, "Impossibile cercare", Toast.LENGTH_SHORT).show();}
                 break;

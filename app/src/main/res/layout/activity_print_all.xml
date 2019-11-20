@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/fab_margin"
     tools:context=".PrintAllActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".SigninActivity">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pcadapp"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="40sp"
-            android:visibility="visible" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="@android:dimen/thumbnail_height"
@@ -31,22 +16,28 @@
             android:src="@drawable/app5" />
 
         <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="bottom"
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:layout_gravity="center"
             android:text="@string/print_parole_cercate" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="265dp"
-            android:text="@string/output_text" />
+    <TextView
+        android:scrollbars = "vertical"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="285dp"
+        android:layout_gravity="center"
+        android:text="@string/output_text" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="@string/back_to_home" />
+    <Button
+        android:onClick="doGoBack"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:text="@string/back_to_home" />
 
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

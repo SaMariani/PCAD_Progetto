@@ -3,6 +3,7 @@ package pcad2019.pcadapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,16 +26,11 @@ public class PrintAllActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String s = intent.getStringExtra("msg2");
         TextView idText = (TextView) findViewById(R.id.textView);
+        idText.setMovementMethod(new ScrollingMovementMethod());
         idText.setText(s);
     }
 
-    public void doPrint(View view) { // avvia activity per la stampa 3 words
-        if (!checkIp()) return;
-        Intent intent = new Intent(this, SigninActivity.class);
-        //intent.putExtra("msg2", IPstring);
-        //startActivity(intent);
-        AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"print", null,null, null);
-        worker.execute();
+    public void doGoBack(View view) { // avvia activity per la stampa 3 words
+        finish();
     }
 }
