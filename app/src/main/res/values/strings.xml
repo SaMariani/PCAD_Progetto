@@ -11,7 +11,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="inserire_cognome">Inserire cognome</string>
     <string name="inserire_nome">Inserire nome</string>
-    <string name="inserire_location_da_cercare">Inserire location</string>
+    <string name="inserire_location_da_cercare">INSERT LOCATION</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="benvenuti">Benvenuti!</string>
     <string name="start">START</string>
