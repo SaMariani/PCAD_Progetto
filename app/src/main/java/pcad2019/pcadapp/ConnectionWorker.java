@@ -42,8 +42,8 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 return !words.equals("FAIL");
 
             case "print3words":
-                Intent intent2 = new Intent(activity, SigninActivity.class);
-                words = client.print();
+                Intent intent2 = new Intent(activity, PrintAllActivity.class);
+                words = client.print3words();
                 intent2.putExtra("msg2", words);
                 activity.startActivity(intent2);
                 //words = "prova OK";

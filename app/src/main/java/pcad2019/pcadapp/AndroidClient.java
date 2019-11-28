@@ -88,6 +88,38 @@ public class AndroidClient {
         }
         return words;
     }
+
+    //PRINT TEXT
+    public String print3words() {
+        Socket serverSocket = null;
+        PrintWriter output = null;
+        BufferedReader input = null;
+        String words3="";
+        try {
+            serverSocket = new Socket(ip, port);
+            output =  new PrintWriter(serverSocket.getOutputStream(), true);
+            input = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+            output.println("mostSearchedW");
+            String result = input.readLine();
+            if(result.equals("FAIL")) return "FAIL";
+            words3 = input.readLine();
+            if(words3.equals("FAIL")) return "FAIL";
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            return "FAIL";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "FAIL";
+        } finally {
+            try {
+                if (serverSocket != null) serverSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return words3;
+    }
+
     //REGISTRAZIONE UTENTE
     public boolean signIn(String id, String name, String surname) {
         if (id.equals("") || name.equals("") || surname.equals("")) return false;
