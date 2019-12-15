@@ -8,7 +8,7 @@
     <string name="indirizzo_ip_server">IP SERVER</string>
     <string name="inserisci">Inserisci</string>
     <string name="title_activity_signin">SigninActivity</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">PCAD 2019</string>
     <string name="inserire_cognome">Inserire cognome</string>
     <string name="inserire_nome">Inserire nome</string>
     <string name="inserire_location_da_cercare">INSERT LOCATION</string>
