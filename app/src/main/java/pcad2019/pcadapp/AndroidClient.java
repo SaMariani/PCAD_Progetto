@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by giorgiodelzanno on 09/03/19.
  */
@@ -91,6 +93,11 @@ public class AndroidClient {
 
     //PRINT TEXT
     public String print3words() {
+        /*try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         Socket serverSocket = null;
         PrintWriter output;
         BufferedReader input;

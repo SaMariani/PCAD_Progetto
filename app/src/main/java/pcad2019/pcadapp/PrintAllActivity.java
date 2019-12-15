@@ -9,15 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PrintAllActivity extends AppCompatActivity {
-    private String IPstring ;
-
-    private boolean checkIp(){ // controlla se è stato inserito un indirizzo ip
-        if ( IPstring == null ){
-            Toast.makeText(this, "Indirizzo IP mancante", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by giorgiodelzanno on 09/03/19.
  */
@@ -41,6 +43,11 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 return !words.equals("FAIL");
 
             case "print3words":
+                /*try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
                 Intent intent2 = new Intent(activity, PrintAllActivity.class);
                 words = client.print3words();
                 intent2.putExtra("msg2", words);
@@ -71,14 +78,14 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             }
             case "print": {
                 if (result) {
-                    Toast.makeText(activity, "Stampa effettuata", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Stampa totale effettuata", Toast.LENGTH_SHORT).show();
                 }
                 else { Toast.makeText(activity, "Impossibile cercare", Toast.LENGTH_SHORT).show();}
                 break;
             }
             case "print3words": {
                 if (result) {
-                    Toast.makeText(activity, "Stampa effettuata: "+words, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Stampa effettuata", Toast.LENGTH_SHORT).show();
                     //activity.finish();
                 }
                 else { Toast.makeText(activity, "Impossibile cercare", Toast.LENGTH_SHORT).show();}
