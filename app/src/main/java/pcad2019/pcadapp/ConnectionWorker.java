@@ -18,13 +18,12 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
     private String searchedW;
     private String words="INITIALIZED";
 
-    public ConnectionWorker(Activity activity, AndroidClient client, String command, String location, String searchedW, String words) {
+    public ConnectionWorker(Activity activity, AndroidClient client, String command, String location, String searchedW) {
         this.activity = activity;
         this.client = client;
         this.command = command;
         this.location = location;
         this.searchedW = searchedW;
-        //this.words = "GATTO";
     }
 
 

@@ -41,21 +41,21 @@ public class LoginActivity extends AppCompatActivity {
         EditText idText2 = findViewById(R.id.loginText2);
         String searchedW = idText2.getText().toString();
         AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"research", location, searchedW, null);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"research", location, searchedW);
         worker.execute();
     }
 
     public void doPrint(View view) { // avvia activity per la stampa 3 words
         if (!checkIp()) return;
         AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"print", null,null, null);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"print", null,null);
         worker.execute();
     }
 
     public void do3wordsMoreFrequent(View view) { // avvia activity per la ricerca 3 parole piu frequenti in una location
         if (!checkIp()) return;
         AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"print3words", null,null, null);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"print3words", null,null);
         worker.execute();
     }
 
