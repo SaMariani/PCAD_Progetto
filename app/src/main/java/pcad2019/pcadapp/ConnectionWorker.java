@@ -54,7 +54,7 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 activity.startActivity(intent2);
                 //words = "prova OK";
                 /*words = client.print();
-                LoginActivity.wordsToPrint=words;*/
+                HomeActivity.wordsToPrint=words;*/
                 return !words.equals("FAIL");
 
             default:
@@ -68,7 +68,7 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "research": {
                 if (result) {
                     Toast.makeText(activity, "Ricerca effettuata", Toast.LENGTH_SHORT).show();
-                    //words=LoginActivity.EXTRA_MESSAGE_ID;
+                    //words=HomeActivity.EXTRA_MESSAGE_ID;
                     //activity.finish();
                 }
                 else {

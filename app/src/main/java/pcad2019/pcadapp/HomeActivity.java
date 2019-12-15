@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE_ID = "msg1";
     public static final String EXTRA_MESSAGE_IP = "msg2";
