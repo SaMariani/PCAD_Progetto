@@ -34,21 +34,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void doSignIn(View view) { // avvia activity per la registrazione
-        if (!checkIp()) return;
-        Intent intent = new Intent(this, SigninActivity.class);
-        intent.putExtra("msg2", IPstring);
-        startActivity(intent);
-    }
-
     public void doResearch(View view) { // avvia activity per la ricerca (inserimento testo)
         if (!checkIp()) return;
-        EditText idText = (EditText) findViewById(R.id.loginText);
+        EditText idText = findViewById(R.id.loginText);
         String location = idText.getText().toString();
-        EditText idText2 = (EditText) findViewById(R.id.loginText2);
+        EditText idText2 = findViewById(R.id.loginText2);
         String searchedW = idText2.getText().toString();
         AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"research", location,searchedW, null);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"research", location, searchedW, null);
         worker.execute();
     }
 
@@ -66,17 +59,8 @@ public class LoginActivity extends AppCompatActivity {
         worker.execute();
     }
 
-    public void doLogIn(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
-        if (!checkIp()) return;
-        EditText idText = (EditText) findViewById(R.id.loginText);
-        String id = idText.getText().toString();
-        AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"logIn",id,null,null);
-        worker.execute();
-    }
-
     public void insertIp(View view) { // inserisce indirizzo IP sul quale contattare il server
-        EditText ipText = (EditText) findViewById(R.id.IpText);
+        EditText ipText = findViewById(R.id.IpText);
         IPstring = ipText.getText().toString();
         Toast.makeText(this, IPstring, Toast.LENGTH_SHORT).show();
     }
