@@ -18,7 +18,7 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
     private String command;
     private String location;
     private String searchedW;
-    private String words="INITIALIZED";
+    private String words;
 
     public ConnectionWorker(Activity activity, AndroidClient client, String command, String location, String searchedW) {
         this.activity = activity;
@@ -52,9 +52,6 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 words = client.print3words();
                 intent2.putExtra("msg2", words);
                 activity.startActivity(intent2);
-                //words = "prova OK";
-                /*words = client.print();
-                HomeActivity.wordsToPrint=words;*/
                 return !words.equals("FAIL");
 
             default:
@@ -68,8 +65,6 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "research": {
                 if (result) {
                     Toast.makeText(activity, "Ricerca effettuata", Toast.LENGTH_SHORT).show();
-                    //words=HomeActivity.EXTRA_MESSAGE_ID;
-                    //activity.finish();
                 }
                 else {
                     Toast.makeText(activity, "TESTO/LOCATION MANCANTE", Toast.LENGTH_SHORT).show();
@@ -86,7 +81,6 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "print3words": {
                 if (result) {
                     Toast.makeText(activity, "Stampa effettuata", Toast.LENGTH_SHORT).show();
-                    //activity.finish();
                 }
                 else { Toast.makeText(activity, "Impossibile cercare", Toast.LENGTH_SHORT).show();}
                 break;
