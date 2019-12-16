@@ -15,9 +15,17 @@ public class PrintAllActivity extends AppCompatActivity {
         setContentView(R.layout.activity_print_all);
         Intent intent = getIntent();
         String s = intent.getStringExtra("msg2");
+        String [] SplitW = s.split("], ");
+        String f="";
+        if(SplitW[0].isEmpty())
+            f="Non hai cercato ancora nessuna parola";
+        else {
+            for (int i = 0; i < SplitW.length && !SplitW[0].isEmpty(); ++i)
+                f = f.concat(SplitW[i].concat("]\n"));
+        }
         TextView idText = (TextView) findViewById(R.id.textView);
         idText.setMovementMethod(new ScrollingMovementMethod());
-        idText.setText(s);
+        idText.setText(f);
     }
 
     public void doGoBack(View view) { // avvia activity per la stampa 3 words

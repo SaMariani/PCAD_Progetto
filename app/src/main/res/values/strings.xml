@@ -24,7 +24,7 @@
     <string name="stampa_testo" />
     <string name="stampaTutto">STAMPA TUTTE LE PAROLE CERCATE</string>
     <string name="output_text">" "</string>
-    <string name="print_parole_cercate">Ecco tutte le parole finora cercate:</string>
+    <string name="print_parole_cercate">Ecco le 3 parole piú cercate di ogni zona:</string>
     <string name="back_to_home">BACK TO HOME</string>
     <string name="title_activity_printallactivity">PrintAllActivity</string>
 </resources>
