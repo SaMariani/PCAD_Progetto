@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by giorgiodelzanno on 09/03/19.
@@ -16,18 +15,12 @@ import java.util.concurrent.TimeUnit;
 public class AndroidClient {
     protected String ip;
     private int port;
-    private String currentId; // ID dell'utente attualmente loggato
 
     public AndroidClient(String ip, int port ) {
         this.ip = ip;
         this.port = port;
     }
 
-    public AndroidClient(String ip, int port , String currentId) {
-        this.ip = ip;
-        this.port = port;
-        this.currentId = currentId;
-    }
     //INSERT TEXT
     public boolean research(String location, String words) {
         if (words.equals("") || location.equals("")) return false;
@@ -93,11 +86,6 @@ public class AndroidClient {
 
     //PRINT TEXT
     public String print3words() {
-        /*try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         Socket serverSocket = null;
         PrintWriter output;
         BufferedReader input;

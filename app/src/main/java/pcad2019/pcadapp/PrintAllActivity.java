@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class PrintAllActivity extends AppCompatActivity {
 

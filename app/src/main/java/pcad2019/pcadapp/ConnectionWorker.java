@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by giorgiodelzanno on 09/03/19.
@@ -43,11 +42,6 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                 return !words.equals("FAIL");
 
             case "print3words":
-                /*try {
-                    TimeUnit.SECONDS.sleep(2);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }*/
                 Intent intent2 = new Intent(activity, PrintAllActivity.class);
                 words = client.print3words();
                 intent2.putExtra("msg2", words);
